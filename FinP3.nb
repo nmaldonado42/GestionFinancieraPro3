@@ -1,0 +1,1376 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     56076,       1368]
+NotebookOptionsPosition[     53371,       1313]
+NotebookOutlinePosition[     53763,       1329]
+CellTagsIndexPosition[     53720,       1326]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"S", "=", 
+     RowBox[{"{", "S1", "}"}]}], ";", 
+    RowBox[{"SeedRandom", "[", "seed", "]"}], ";", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "1"}], ",", 
+      RowBox[{"n", "<", "T"}], ",", 
+      RowBox[{"n", "++"}], ",", 
+      RowBox[{
+       RowBox[{"ran", "=", 
+        RowBox[{"RandomVariate", "[", 
+         RowBox[{"BernoulliDistribution", "[", "p", "]"}], "]"}]}], ";", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"ran", "\[Equal]", "1"}], ",", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"S", ",", 
+           RowBox[{
+            RowBox[{"S", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "u"}]}], "]"}], ",", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"S", ",", 
+           RowBox[{
+            RowBox[{"S", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "d"}]}], "]"}]}], "]"}]}]}], 
+     "]"}], ";", 
+    RowBox[{"ListLinePlot", "[", 
+     RowBox[{"S", ",", 
+      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Periodo (n)\>\"", ",", 
+         "\"\<Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))\>\""}], "}"}]}], 
+      ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"seed", ",", "2248", ",", "\"\<Seed\>\""}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "S1", ",", "4", ",", 
+      "\"\<\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)\>\""}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "p", ",", "0.5", ",", 
+       "\"\<p (Probabilidad de Valorizaci\[OAcute]n)\>\""}], "}"}], ",", 
+     "0.01", ",", "0.99"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "u", ",", "2", ",", "\"\<u (Factor de Valorizaci\[OAcute]n)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", 
+       FractionBox["1", "u"], ",", 
+       "\"\<d (Factor de Depreciaci\[OAcute]n)\>\""}], "}"}], ",", "0", ",", 
+     "u"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "10", ",", "\"\<N (N\[UAcute]mero de Periodos)\>\""}],
+       "}"}], ",", "10", ",", "1000", ",", "1"}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"seed", ",", "S1", ",", "p", ",", "u", ",", "d", ",", "T"}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGCQAGIQbfJy1xafgjeO78o0boBoo5sP7oJomR69+yB6b13Q
+ExD990UxmC5b7PwSRD/uuvUTRDM0mv0D0RVuply+QPrGtbWCIDojmlEERK+I
+uN4Gogv3NPaA6AvSLtNB9JQ2oZkgem3A/g0gmuXG/G0g2qnK+TuIfj7r408Q
+nfDRw8MPSPe1aPmD6On1jREgmn97diSITrtxMQtEewXdBdN1OvPngGgXDe15
+IJp3q2puAEh/e3cBiE7zqasC0TGRF8H0O73yJhD9Y+4yMF0nsGUriGZrb94N
+ogWPcuQEAmmmw8fAtM3bFdblQHpL628bEB1b9de1Akgvf1XvDqKZji+XbATS
+TQWrwbRdVqXGPCDNvplbF0RryXk1LADZW/G7GUQDAGffwG0=
+  "],
+ CellLabel->
+  "In[394]:=",ExpressionUUID->"f3d8b1ca-4ab1-46b3-9b93-2fee003e3c3b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.9259259259259255, $CellContext`p$$ =
+     0.47, $CellContext`S1$$ = 1, $CellContext`seed$$ = 
+    2020, $CellContext`T$$ = 365, $CellContext`u$$ = 1.09, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`seed$$], 2248, "Seed"}}, {{
+       Hold[$CellContext`S1$$], 4, 
+       "\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)"}}, {{
+       Hold[$CellContext`p$$], 0.5, 
+       "p (Probabilidad de Valorizaci\[OAcute]n)"}, 0.01, 0.99}, {{
+       Hold[$CellContext`u$$], 2, "u (Factor de Valorizaci\[OAcute]n)"}}, {{
+       Hold[$CellContext`d$$], $CellContext`u$$^(-1), 
+       "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+      Dynamic[$CellContext`u$$]}, {{
+       Hold[$CellContext`T$$], 10, "N (N\[UAcute]mero de Periodos)"}, 10, 
+      1000, 1}}, Typeset`size$$ = {643., {205., 210.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = $CellContext`u$$^(-1), \
+$CellContext`p$$ = 0.5, $CellContext`S1$$ = 4, $CellContext`seed$$ = 
+        2248, $CellContext`T$$ = 10, $CellContext`u$$ = 2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`S = {$CellContext`S1$$}; 
+       SeedRandom[$CellContext`seed$$]; 
+       For[$CellContext`n = 1, $CellContext`n < $CellContext`T$$, 
+         Increment[$CellContext`n], $CellContext`ran = RandomVariate[
+            BernoulliDistribution[$CellContext`p$$]]; 
+         If[$CellContext`ran == 1, 
+           AppendTo[$CellContext`S, 
+            Part[$CellContext`S, -1] $CellContext`u$$], 
+           
+           AppendTo[$CellContext`S, 
+            Part[$CellContext`S, -1] $CellContext`d$$]]]; 
+       ListLinePlot[$CellContext`S, Axes -> False, Frame -> True, 
+         FrameLabel -> {
+          "Periodo (n)", "Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))"}, 
+         ImageSize -> Full, PlotRange -> All]), 
+      "Specifications" :> {{{$CellContext`seed$$, 2248, 
+          "Seed"}}, {{$CellContext`S1$$, 4, 
+          "\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)"}}, \
+{{$CellContext`p$$, 0.5, "p (Probabilidad de Valorizaci\[OAcute]n)"}, 0.01, 
+         0.99}, {{$CellContext`u$$, 2, 
+          "u (Factor de Valorizaci\[OAcute]n)"}}, {{$CellContext`d$$, \
+$CellContext`u$$^(-1), "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+         Dynamic[$CellContext`u$$]}, {{$CellContext`T$$, 10, 
+          "N (N\[UAcute]mero de Periodos)"}, 10, 1000, 1}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`seed$$, $CellContext`S1$$, \
+$CellContext`p$$, $CellContext`u$$, $CellContext`d$$, $CellContext`T$$}}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{688., {353., 359.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.817081009925486*^9, 3.8170810399738913`*^9}, {
+   3.817140588658718*^9, 3.817140594149481*^9}, 3.817145380198941*^9},
+ CellLabel->
+  "Out[394]=",ExpressionUUID->"a8530118-be2e-4667-b5bb-a3a3f23fb249"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{"d", "<", 
+      RowBox[{"1", "+", "r"}], "<", "u"}], ",", 
+     RowBox[{
+      RowBox[{"S", "=", 
+       RowBox[{"{", "S1", "}"}]}], ";", 
+      RowBox[{"p", "=", 
+       FractionBox[
+        RowBox[{"1", "+", "r", "-", "d"}], 
+        RowBox[{"u", "-", "d"}]]}], ";", 
+      RowBox[{"SeedRandom", "[", "seed", "]"}], ";", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"n", "=", "1"}], ",", 
+        RowBox[{"n", "<", "T"}], ",", 
+        RowBox[{"n", "++"}], ",", 
+        RowBox[{
+         RowBox[{"ran", "=", 
+          RowBox[{"RandomVariate", "[", 
+           RowBox[{"BernoulliDistribution", "[", "p", "]"}], "]"}]}], ";", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"ran", "\[Equal]", "1"}], ",", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"S", ",", 
+             RowBox[{
+              RowBox[{"S", "[", 
+               RowBox[{"[", 
+                RowBox[{"-", "1"}], "]"}], "]"}], "u"}]}], "]"}], ",", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"S", ",", 
+             RowBox[{
+              RowBox[{"S", "[", 
+               RowBox[{"[", 
+                RowBox[{"-", "1"}], "]"}], "]"}], "d"}]}], "]"}]}], "]"}]}]}],
+        "]"}], ";", 
+      RowBox[{"ListLinePlot", "[", 
+       RowBox[{"S", ",", 
+        RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+        RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+        RowBox[{"FrameLabel", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Periodo (n)\>\"", ",", 
+           "\"\<Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))\>\""}], "}"}]}], 
+        ",", 
+        RowBox[{"ImageSize", "\[Rule]", "Full"}]}], "]"}]}], ",", 
+     RowBox[{"Catch", "[", 
+      RowBox[{
+      "Throw", "[", 
+       "\"\<Los par\[AAcute]metros introducidos no corresponden a la condici\
+\[OAcute]n de no arbitraje\>\"", "]"}], "]"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"seed", ",", "2248", ",", "\"\<Seed\>\""}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "S1", ",", "4", ",", 
+      "\"\<\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)\>\""}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0.25", ",", "\"\<r (Tasa de Inter\[EAcute]s)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "u", ",", "2", ",", "\"\<u (Factor de Valorizaci\[OAcute]n)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", 
+       FractionBox["1", "u"], ",", 
+       "\"\<d (Factor de Depreciaci\[OAcute]n)\>\""}], "}"}], ",", "0", ",", 
+     "u"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "10", ",", "\"\<N (N\[UAcute]mero de Periodos)\>\""}],
+       "}"}], ",", "10", ",", "1000", ",", "1"}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"S1", ",", "u", ",", "d", ",", "T"}], "}"}]}]}], "]"}]], "Input",\
+
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQA2IQ/WhHzEzfgjeOPHNdZ4PoK2/5F4Bot/iIJSD6wb6y
+FSA6bfPq9SD6UX3kDhAd1aqyC0Tbqb9l8APSRoUpnCD6ALugHIj+tDVKGUSv
+YXypDqItLcIMQPSRivREEK3RHZ0Jovcfi2gD0ZzcJ8B0yHOfmSD6/MTNYHr9
+oettAUC6xkKwC0QXxDNOBdEJgtJg+uyeqJJAIP3tqlEZiK5WXGNeDqSPPi23
+BdF378Z6VwBpDoVtPiB61bZ9mY1A+lLQTTCt9WS+xVwg7bd6J5h2ip7lCKJN
+js0F06e4EkTmAen/d2KlQHTK0kuWIPq2X7ENiD71O8sLRFus7fIG0RK3M56t
+BNLx776/ANEA7N+w1w==
+  "],
+ CellLabel->
+  "In[405]:=",ExpressionUUID->"6df5c581-4166-4228-94cb-d6435de0bb1a"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = $CellContext`u$$^(-1), \
+$CellContext`r$$ = 0.002, $CellContext`S1$$ = 1, $CellContext`seed$$ = 
+    2248, $CellContext`T$$ = 365, $CellContext`u$$ = 1.07, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`seed$$], 2248, "Seed"}}, {{
+       Hold[$CellContext`S1$$], 4, 
+       "\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)"}}, {{
+       Hold[$CellContext`r$$], 0.25, "r (Tasa de Inter\[EAcute]s)"}}, {{
+       Hold[$CellContext`u$$], 2, "u (Factor de Valorizaci\[OAcute]n)"}}, {{
+       Hold[$CellContext`d$$], $CellContext`u$$^(-1), 
+       "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+      Dynamic[$CellContext`u$$]}, {{
+       Hold[$CellContext`T$$], 10, "N (N\[UAcute]mero de Periodos)"}, 10, 
+      1000, 1}}, Typeset`size$$ = {643., {205., 209.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = $CellContext`u$$^(-1), \
+$CellContext`r$$ = 0.25, $CellContext`S1$$ = 4, $CellContext`seed$$ = 
+        2248, $CellContext`T$$ = 10, $CellContext`u$$ = 2}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      If[$CellContext`d$$ < 
+        1 + $CellContext`r$$ < $CellContext`u$$, $CellContext`S = \
+{$CellContext`S1$$}; $CellContext`p = (
+           1 + $CellContext`r$$ - $CellContext`d$$)/($CellContext`u$$ - \
+$CellContext`d$$); SeedRandom[$CellContext`seed$$]; 
+        For[$CellContext`n = 1, $CellContext`n < $CellContext`T$$, 
+          Increment[$CellContext`n], $CellContext`ran = RandomVariate[
+             BernoulliDistribution[$CellContext`p]]; If[$CellContext`ran == 1, 
+            
+            AppendTo[$CellContext`S, 
+             Part[$CellContext`S, -1] $CellContext`u$$], 
+            
+            AppendTo[$CellContext`S, 
+             Part[$CellContext`S, -1] $CellContext`d$$]]]; 
+        ListLinePlot[$CellContext`S, Axes -> False, Frame -> True, 
+          FrameLabel -> {
+           "Periodo (n)", "Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))"}, 
+          ImageSize -> Full], 
+        Catch[
+         Throw[
+         "Los par\[AAcute]metros introducidos no corresponden a la condici\
+\[OAcute]n de no arbitraje"]]], 
+      "Specifications" :> {{{$CellContext`seed$$, 2248, 
+          "Seed"}}, {{$CellContext`S1$$, 4, 
+          "\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)"}}, \
+{{$CellContext`r$$, 0.25, "r (Tasa de Inter\[EAcute]s)"}}, {{$CellContext`u$$,
+           2, "u (Factor de Valorizaci\[OAcute]n)"}}, {{$CellContext`d$$, \
+$CellContext`u$$^(-1), "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+         Dynamic[$CellContext`u$$]}, {{$CellContext`T$$, 10, 
+          "N (N\[UAcute]mero de Periodos)"}, 10, 1000, 1}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`S1$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`T$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{688., {323., 329.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8171467050308323`*^9, 3.817164618453444*^9},
+ CellLabel->
+  "Out[405]=",ExpressionUUID->"769614e0-9aaa-4eb7-a562-c091edf595fd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"M", "=", 
+     RowBox[{"{", "0", "}"}]}], ";", 
+    RowBox[{"SeedRandom", "[", "2248", "]"}], ";", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"t", "=", "1"}], ",", 
+      RowBox[{"t", "<", "T"}], ",", 
+      RowBox[{"t", "++"}], ",", 
+      RowBox[{
+       RowBox[{"ran", "=", 
+        RowBox[{"RandomVariate", "[", 
+         RowBox[{"BernoulliDistribution", "[", "0.5", "]"}], "]"}]}], ";", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"ran", "\[Equal]", "1"}], ",", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"M", ",", 
+           RowBox[{
+            RowBox[{"M", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "+", "1"}]}], "]"}], ",", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"M", ",", 
+           RowBox[{
+            RowBox[{"M", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "-", "1"}]}], "]"}]}], 
+        "]"}]}]}], "]"}], ";", 
+    RowBox[{"S", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[Sigma]", " ", 
+          RowBox[{"M", "[", 
+           RowBox[{"[", "n", "]"}], "]"}]}]], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox["2", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", "\[Sigma]"], "+", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", "\[Sigma]"}]]}]], ")"}], "n"]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "T"}], "}"}]}], "]"}]}], ";", 
+    RowBox[{"ListLinePlot", "[", 
+     RowBox[{"S", ",", 
+      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Periodo (n)\>\"", ",", 
+         "\"\<Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))\>\""}], "}"}]}], 
+      ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\[Sigma]", ",", "0.5", ",", "\"\<\[Sigma]\>\""}], "}"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "10", ",", "\"\<N (N\[UAcute]mero de Periodos)\>\""}],
+       "}"}], ",", "10", ",", "1000", ",", "1"}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"\[Sigma]", ",", "T"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.816974775615583*^9, 3.816974836308639*^9}, {
+  3.816974892850553*^9, 3.8169750481662073`*^9}, {3.816978368373602*^9, 
+  3.816978371152519*^9}, {3.816982473449585*^9, 3.816982479174124*^9}, {
+  3.8169827627323103`*^9, 3.816982766771654*^9}, {3.816982819932974*^9, 
+  3.8169828342347*^9}, {3.8169835078502197`*^9, 3.81698350836526*^9}, {
+  3.817060377574091*^9, 3.8170603995253983`*^9}, {3.817060444015283*^9, 
+  3.8170604466854*^9}, {3.817060754174069*^9, 3.817060759292877*^9}, {
+  3.817061545382853*^9, 3.817061555899323*^9}, {3.8170630399819183`*^9, 
+  3.817063050238096*^9}, {3.817081557214542*^9, 3.817081561559959*^9}, {
+  3.817140799578869*^9, 3.817140802571535*^9}, {3.81714093642549*^9, 
+  3.817140950858281*^9}},
+ CellLabel->
+  "In[388]:=",ExpressionUUID->"cf25ad2c-bfad-4fd8-88b2-3254409ad15d"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`T$$ = 365, $CellContext`\[Sigma]$$ = 0.03, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`\[Sigma]$$], 0.5, "\[Sigma]"}}, {{
+       Hold[$CellContext`T$$], 10, "N (N\[UAcute]mero de Periodos)"}, 10, 
+      1000, 1}}, Typeset`size$$ = {643., {203., 207.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`T$$ = 10, $CellContext`\[Sigma]$$ = 0.5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`M = {0}; SeedRandom[2248]; 
+       For[$CellContext`t = 1, $CellContext`t < $CellContext`T$$, 
+         Increment[$CellContext`t], $CellContext`ran = RandomVariate[
+            BernoulliDistribution[0.5]]; If[$CellContext`ran == 1, 
+           AppendTo[$CellContext`M, Part[$CellContext`M, -1] + 1], 
+           
+           AppendTo[$CellContext`M, Part[$CellContext`M, -1] - 
+            1]]]; $CellContext`S = 
+        Table[E^($CellContext`\[Sigma]$$ 
+            Part[$CellContext`M, $CellContext`n]) (2/(
+            E^$CellContext`\[Sigma]$$ + 
+            E^(-$CellContext`\[Sigma]$$)))^$CellContext`n, {$CellContext`n, 
+           1, $CellContext`T$$}]; 
+       ListLinePlot[$CellContext`S, Axes -> False, Frame -> True, 
+         FrameLabel -> {
+          "Periodo (n)", "Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))"}, 
+         ImageSize -> Full, PlotRange -> All]), 
+      "Specifications" :> {{{$CellContext`\[Sigma]$$, 0.5, 
+          "\[Sigma]"}}, {{$CellContext`T$$, 10, 
+          "N (N\[UAcute]mero de Periodos)"}, 10, 1000, 1}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`\[Sigma]$$, $CellContext`T$$}}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{688., {273., 279.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.81708150760426*^9, 3.817081511516706*^9}, {
+   3.817081562691759*^9, 3.817081564824668*^9}, 3.817140954919772*^9, 
+   3.817141001750471*^9},
+ CellLabel->
+  "Out[388]=",ExpressionUUID->"f4b3c593-b45a-4206-b27e-61aed789ff73"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"M", "=", 
+     RowBox[{"{", "0", "}"}]}], ";", 
+    RowBox[{"SeedRandom", "[", "2248", "]"}], ";", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"t", "=", "1"}], ",", 
+      RowBox[{"t", "<", "T"}], ",", 
+      RowBox[{"t", "++"}], ",", 
+      RowBox[{
+       RowBox[{"ran", "=", 
+        RowBox[{"RandomVariate", "[", 
+         RowBox[{"BernoulliDistribution", "[", "p", "]"}], "]"}]}], ";", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"ran", "\[Equal]", "1"}], ",", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"M", ",", 
+           RowBox[{
+            RowBox[{"M", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "+", "1"}]}], "]"}], ",", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"M", ",", 
+           RowBox[{
+            RowBox[{"M", "[", 
+             RowBox[{"[", 
+              RowBox[{"-", "1"}], "]"}], "]"}], "-", "1"}]}], "]"}]}], 
+        "]"}]}]}], "]"}], ";", 
+    RowBox[{"S", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"\[Sigma]", " ", 
+          RowBox[{"M", "[", 
+           RowBox[{"[", "n", "]"}], "]"}]}]], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          FractionBox["2", 
+           RowBox[{
+            SuperscriptBox["\[ExponentialE]", "\[Sigma]"], "+", 
+            SuperscriptBox["\[ExponentialE]", 
+             RowBox[{"-", "\[Sigma]"}]]}]], ")"}], "n"]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "T"}], "}"}]}], "]"}]}], ";", 
+    RowBox[{"ListLinePlot", "[", 
+     RowBox[{"S", ",", 
+      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Periodo (n)\>\"", ",", 
+         "\"\<Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))\>\""}], "}"}]}], 
+      ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"p", ",", "0.5", ",", "\"\<p (Probabilidad de Ascenso)\>\""}], 
+      "}"}], ",", "0.01", ",", "0.99"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\[Sigma]", ",", "0.5", ",", "\"\<\[Sigma]\>\""}], "}"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "10", ",", "\"\<N (N\[UAcute]mero de Periodos)\>\""}],
+       "}"}], ",", "10", ",", "1000", ",", "1"}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"p", ",", "\[Sigma]", ",", "T"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.816974775615583*^9, 3.816974836308639*^9}, {
+  3.816974892850553*^9, 3.8169750481662073`*^9}, {3.816978368373602*^9, 
+  3.816978371152519*^9}, {3.816982473449585*^9, 3.816982479174124*^9}, {
+  3.8169827627323103`*^9, 3.816982766771654*^9}, {3.816982819932974*^9, 
+  3.8169828342347*^9}, {3.816983166175147*^9, 3.816983227319682*^9}, {
+  3.8169835303689632`*^9, 3.8169835308682756`*^9}, {3.816983647293939*^9, 
+  3.816983649518816*^9}, {3.817060770277485*^9, 3.817060792975705*^9}, {
+  3.8170630736810083`*^9, 3.8170631226109457`*^9}, {3.81708162057405*^9, 
+  3.817081622605011*^9}, {3.81714104425025*^9, 3.8171410564889383`*^9}},
+ CellLabel->
+  "In[389]:=",ExpressionUUID->"2b336632-a7b8-4f48-8f0f-8b6b03e49471"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`p$$ = 0.51, $CellContext`T$$ = 
+    365, $CellContext`\[Sigma]$$ = 0.042, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`p$$], 0.5, "p (Probabilidad de Ascenso)"}, 0.01, 
+      0.99}, {{
+       Hold[$CellContext`\[Sigma]$$], 0.5, "\[Sigma]"}}, {{
+       Hold[$CellContext`T$$], 10, "N (N\[UAcute]mero de Periodos)"}, 10, 
+      1000, 1}}, Typeset`size$$ = {643., {203., 207.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`p$$ = 0.5, $CellContext`T$$ = 
+        10, $CellContext`\[Sigma]$$ = 0.5}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`M = {0}; SeedRandom[2248]; 
+       For[$CellContext`t = 1, $CellContext`t < $CellContext`T$$, 
+         Increment[$CellContext`t], $CellContext`ran = RandomVariate[
+            BernoulliDistribution[$CellContext`p$$]]; 
+         If[$CellContext`ran == 1, 
+           AppendTo[$CellContext`M, Part[$CellContext`M, -1] + 1], 
+           
+           AppendTo[$CellContext`M, Part[$CellContext`M, -1] - 
+            1]]]; $CellContext`S = 
+        Table[E^($CellContext`\[Sigma]$$ 
+            Part[$CellContext`M, $CellContext`n]) (2/(
+            E^$CellContext`\[Sigma]$$ + 
+            E^(-$CellContext`\[Sigma]$$)))^$CellContext`n, {$CellContext`n, 
+           1, $CellContext`T$$}]; 
+       ListLinePlot[$CellContext`S, Axes -> False, Frame -> True, 
+         FrameLabel -> {
+          "Periodo (n)", "Precio (\!\(\*SubscriptBox[\(S\), \(n\)]\))"}, 
+         ImageSize -> Full, PlotRange -> All]), 
+      "Specifications" :> {{{$CellContext`p$$, 0.5, 
+          "p (Probabilidad de Ascenso)"}, 0.01, 
+         0.99}, {{$CellContext`\[Sigma]$$, 0.5, 
+          "\[Sigma]"}}, {{$CellContext`T$$, 10, 
+          "N (N\[UAcute]mero de Periodos)"}, 10, 1000, 1}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`p$$, $CellContext`\[Sigma]$$, \
+$CellContext`T$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{688., {300., 306.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.817081607722248*^9, 3.817081624618*^9}, {
+  3.817141057914434*^9, 3.817141063250173*^9}},
+ CellLabel->
+  "Out[389]=",ExpressionUUID->"9b687326-eb0a-4126-96fe-29dd416f7608"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"T", "=", 
+     RowBox[{"Length", "[", "\[CapitalDelta]", "]"}]}], ";", 
+    RowBox[{"SeedRandom", "[", "2248", "]"}], ";", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"d", "<", 
+       RowBox[{"1", "+", "r"}], "<", "u"}], ",", 
+      RowBox[{
+       RowBox[{"S", "=", 
+        RowBox[{"{", "S1", "}"}]}], ";", 
+       RowBox[{"p", "=", 
+        FractionBox[
+         RowBox[{"1", "+", "r", "-", "d"}], 
+         RowBox[{"u", "-", "d"}]]}], ";", 
+       RowBox[{"SeedRandom", "[", "2248", "]"}], ";", 
+       RowBox[{"For", "[", 
+        RowBox[{
+         RowBox[{"n", "=", "1"}], ",", 
+         RowBox[{"n", "<", "T"}], ",", 
+         RowBox[{"n", "++"}], ",", 
+         RowBox[{
+          RowBox[{"ran", "=", 
+           RowBox[{"RandomVariate", "[", 
+            RowBox[{"BernoulliDistribution", "[", "p", "]"}], "]"}]}], ";", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"ran", "\[Equal]", "1"}], ",", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"S", ",", 
+              RowBox[{
+               RowBox[{"S", "[", 
+                RowBox[{"[", 
+                 RowBox[{"-", "1"}], "]"}], "]"}], "u"}]}], "]"}], ",", 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"S", ",", 
+              RowBox[{
+               RowBox[{"S", "[", 
+                RowBox[{"[", 
+                 RowBox[{"-", "1"}], "]"}], "]"}], "d"}]}], "]"}]}], 
+           "]"}]}]}], "]"}]}], ",", 
+      RowBox[{"Catch", "[", 
+       RowBox[{
+       "Throw", "[", 
+        "\"\<Los par\[AAcute]metros introducidos no corresponden a la condici\
+\[OAcute]n de no arbitraje\>\"", "]"}], "]"}]}], "]"}], ";", 
+    RowBox[{"X", "=", 
+     RowBox[{"{", 
+      RowBox[{"S", "[", 
+       RowBox[{"[", "1", "]"}], "]"}], "}"}]}], ";", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"n", "=", "1"}], ",", 
+      RowBox[{"n", "<", "T"}], ",", 
+      RowBox[{"n", "++"}], ",", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"X", "[", 
+           RowBox[{"[", "n", "]"}], "]"}], "-", 
+          RowBox[{
+           RowBox[{"\[CapitalDelta]", "[", 
+            RowBox[{"[", "n", "]"}], "]"}], 
+           RowBox[{"S", "[", 
+            RowBox[{"[", "n", "]"}], "]"}]}]}], "<", "0"}], ",", 
+        RowBox[{
+         RowBox[{"Echo", "[", 
+          RowBox[{"n", ",", "\"\<Apalancar en \>\""}], "]"}], ";", 
+         RowBox[{"AppendTo", "[", 
+          RowBox[{"X", ",", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"\[CapitalDelta]", "[", 
+              RowBox[{"[", "n", "]"}], "]"}], 
+             RowBox[{"S", "[", 
+              RowBox[{"[", 
+               RowBox[{"n", "+", "1"}], "]"}], "]"}]}], "+", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"1", "+", "r"}], ")"}], 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"X", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], "-", 
+               RowBox[{
+                RowBox[{"\[CapitalDelta]", "[", 
+                 RowBox[{"[", "n", "]"}], "]"}], 
+                RowBox[{"S", "[", 
+                 RowBox[{"[", "n", "]"}], "]"}]}]}], ")"}]}]}]}], "]"}]}], 
+        ",", 
+        RowBox[{"AppendTo", "[", 
+         RowBox[{"X", ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"\[CapitalDelta]", "[", 
+             RowBox[{"[", "n", "]"}], "]"}], 
+            RowBox[{"S", "[", 
+             RowBox[{"[", 
+              RowBox[{"n", "+", "1"}], "]"}], "]"}]}], "+", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "+", "r"}], ")"}], 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"X", "[", 
+               RowBox[{"[", "n", "]"}], "]"}], "-", 
+              RowBox[{
+               RowBox[{"\[CapitalDelta]", "[", 
+                RowBox[{"[", "n", "]"}], "]"}], 
+               RowBox[{"S", "[", 
+                RowBox[{"[", "n", "]"}], "]"}]}]}], ")"}]}]}]}], "]"}]}], 
+       "]"}]}], "]"}], ";", 
+    RowBox[{"ListLinePlot", "[", 
+     RowBox[{"X", ",", 
+      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Periodo (n)\>\"", ",", 
+         "\"\<Capital Acumulado (\!\(\*SubscriptBox[\(X\), \(n\)]\))\>\""}], 
+        "}"}]}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "S1", ",", "4", ",", 
+      "\"\<\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)\>\""}], "}"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0.05", ",", "\"\<r (Tasa de Inter\[EAcute]s)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "u", ",", "2", ",", "\"\<u (Factor de Valorizaci\[OAcute]n)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", 
+       FractionBox["1", "u"], ",", 
+       "\"\<d (Factor de Depreciaci\[OAcute]n)\>\""}], "}"}], ",", "0", ",", 
+     "u"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"\[CapitalDelta]", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0.5", ",", "0.4", ",", "0.3", ",", "0.6", ",", "0.7", ",", "0.8"}], 
+       "}"}], ",", 
+      "\"\<\[CapitalDelta] (Operaciones \
+\!\(\*SubscriptBox[\(\[CapitalDelta]\), \(n\)]\), introducir entre corchetes \
+y separ\[AAcute]ndo los n\[UAcute]meros por comas)\>\""}], "}"}], "}"}], ",", 
+   
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"S1", ",", "r", ",", "\[Sigma]", ",", "\[CapitalDelta]"}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzE8oQwEAx/FnbYdNaRtSkv3hIsYktQM1ixeHLVk5OmyPVla2pW2MaZSy
+wy6TpNBTIu0gkwuT1Vpb1lMOy8qI0oalNmNKyfu9w6/P6fdVmGbGJnkEQTSy
+g7cqIu+0FQYsiYkilP5qJC7WE3qJk7QxCjh1/aCErRtWFZR1rXfDkPCLhIKF
+6DD03Yj0kMkKKDgbF1thR9WjA3oTB054n26agxom54e88XAQbhrJQ6jyhI/h
+aXn1DIo7A5wWuewS1m6/xqBh3pyEdfmVFPePmtNc7+g9A3+ya0+QiIme4V1k
+hO9mVccdnP6UXQz/aj4k0Dpo6IHBNn0v5NOffVCubemH0qRSB7+v1JwlXb0J
+Zt4oCmq3jC8+1kgglIPnxeYCrOzSJSj0lCvwwpIillmHqAb7Dutee7Ubjk67
+FuG+vuCF/7Ee04Q=
+  "],
+ CellLabel->
+  "In[392]:=",ExpressionUUID->"72e1b650-a539-40ef-940f-5fb4582abe07"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.92, $CellContext`r$$ = 
+    0.002, $CellContext`S1$$ = 1, $CellContext`u$$ = 
+    1.07, $CellContext`\[CapitalDelta]$$ = {0.5835012085981939, 
+    0.6355089250167278, 0.5951214419315529, 0.6481648747993661, 
+    0.6069730883635186, 0.6610728636307008, 0.6190607564093102, 
+    0.5797185774973178, 0.5428766492077679, 0.5083760771085828, 
+    0.4760680647315889, 0.5185002183272307, 0.5647143682216136, 
+    0.6150476053891925, 0.6698670658695337, 0.729572608697035, 
+    0.7945997325156843, 0.7441018055894542, 0.810423923044166, 
+    0.7589203466264057, 0.8265632470865861, 0.9002351886747378, 
+    0.8430239804225119, 0.9181630743297358, 0.999999348346082}, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`S1$$], 4, 
+       "\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)"}}, {{
+       Hold[$CellContext`r$$], 0.05, "r (Tasa de Inter\[EAcute]s)"}}, {{
+       Hold[$CellContext`u$$], 2, "u (Factor de Valorizaci\[OAcute]n)"}}, {{
+       Hold[$CellContext`d$$], $CellContext`u$$^(-1), 
+       "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+      Dynamic[$CellContext`u$$]}, {{
+       Hold[$CellContext`\[CapitalDelta]$$], {0.5, 0.4, 0.3, 0.6, 0.7, 0.8}, 
+       "\[CapitalDelta] (Operaciones \!\(\*SubscriptBox[\(\[CapitalDelta]\), \
+\(n\)]\), introducir entre corchetes y separ\[AAcute]ndo los n\[UAcute]meros \
+por comas)"}}}, Typeset`size$$ = {643., {203., 207.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = $CellContext`u$$^(-1), \
+$CellContext`r$$ = 0.05, $CellContext`S1$$ = 4, $CellContext`u$$ = 
+        2, $CellContext`\[CapitalDelta]$$ = {0.5, 0.4, 0.3, 0.6, 0.7, 0.8}}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`T = Length[$CellContext`\[CapitalDelta]$$]; 
+       SeedRandom[2248]; 
+       If[$CellContext`d$$ < 
+         1 + $CellContext`r$$ < $CellContext`u$$, $CellContext`S = \
+{$CellContext`S1$$}; $CellContext`p = (
+            1 + $CellContext`r$$ - $CellContext`d$$)/($CellContext`u$$ - \
+$CellContext`d$$); SeedRandom[2248]; 
+         For[$CellContext`n = 1, $CellContext`n < $CellContext`T, 
+           Increment[$CellContext`n], $CellContext`ran = RandomVariate[
+              BernoulliDistribution[$CellContext`p]]; 
+           If[$CellContext`ran == 1, 
+             
+             AppendTo[$CellContext`S, 
+              Part[$CellContext`S, -1] $CellContext`u$$], 
+             
+             AppendTo[$CellContext`S, 
+              Part[$CellContext`S, -1] $CellContext`d$$]]], 
+         Catch[
+          Throw[
+          "Los par\[AAcute]metros introducidos no corresponden a la condici\
+\[OAcute]n de no arbitraje"]]]; $CellContext`X = {
+          Part[$CellContext`S, 1]}; 
+       For[$CellContext`n = 1, $CellContext`n < $CellContext`T, 
+         Increment[$CellContext`n], 
+         If[
+         Part[$CellContext`X, $CellContext`n] - 
+           Part[$CellContext`\[CapitalDelta]$$, $CellContext`n] 
+           Part[$CellContext`S, $CellContext`n] < 0, 
+          Echo[$CellContext`n, "Apalancar en "]; 
+          AppendTo[$CellContext`X, 
+            Part[$CellContext`\[CapitalDelta]$$, $CellContext`n] 
+             Part[$CellContext`S, $CellContext`n + 1] + (
+              1 + $CellContext`r$$) (Part[$CellContext`X, $CellContext`n] - 
+              Part[$CellContext`\[CapitalDelta]$$, $CellContext`n] 
+              Part[$CellContext`S, $CellContext`n])], 
+          
+          AppendTo[$CellContext`X, 
+           Part[$CellContext`\[CapitalDelta]$$, $CellContext`n] 
+            Part[$CellContext`S, $CellContext`n + 1] + (
+             1 + $CellContext`r$$) (Part[$CellContext`X, $CellContext`n] - 
+             Part[$CellContext`\[CapitalDelta]$$, $CellContext`n] 
+             Part[$CellContext`S, $CellContext`n])]]]; 
+       ListLinePlot[$CellContext`X, Axes -> False, Frame -> True, 
+         FrameLabel -> {
+          "Periodo (n)", 
+           "Capital Acumulado (\!\(\*SubscriptBox[\(X\), \(n\)]\))"}, 
+         ImageSize -> Full, PlotRange -> All]), 
+      "Specifications" :> {{{$CellContext`S1$$, 4, 
+          "\!\(\*SubscriptBox[\(S\), \(1\)]\) (Precio Inicial)"}}, \
+{{$CellContext`r$$, 0.05, "r (Tasa de Inter\[EAcute]s)"}}, {{$CellContext`u$$,
+           2, "u (Factor de Valorizaci\[OAcute]n)"}}, {{$CellContext`d$$, \
+$CellContext`u$$^(-1), "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+         Dynamic[$CellContext`u$$]}, {{$CellContext`\[CapitalDelta]$$, {0.5, 
+          0.4, 0.3, 0.6, 0.7, 0.8}, 
+          "\[CapitalDelta] (Operaciones \
+\!\(\*SubscriptBox[\(\[CapitalDelta]\), \(n\)]\), introducir entre corchetes \
+y separ\[AAcute]ndo los n\[UAcute]meros por comas)"}}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`S1$$, $CellContext`r$$, $CellContext`\
+\[Sigma], $CellContext`\[CapitalDelta]$$}}, "DefaultOptions" :> {}],
+     ImageSizeCache->{688., {363., 369.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.817081733122411*^9, 3.817082514609292*^9, 
+  3.817082782326335*^9, 3.8170828873999367`*^9, 3.81714115276132*^9, 
+  3.817141185832242*^9, 3.817141242319579*^9},
+ CellLabel->
+  "Out[392]=",ExpressionUUID->"d3ab9f65-e7ed-48eb-a9ed-be419aae015e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  TagBox["\<\"Apalancar en \"\>",
+   "EchoLabel"], " ", "7"}]], "Echo",
+ CellChangeTimes->{
+  3.8171461235269737`*^9},ExpressionUUID->"c8d6e4d1-b5a3-44d6-861d-\
+578d7661bf04"],
+
+Cell[BoxData[
+ RowBox[{
+  TagBox["\<\"Apalancar en \"\>",
+   "EchoLabel"], " ", "8"}]], "Echo",
+ CellChangeTimes->{
+  3.817146123605858*^9},ExpressionUUID->"79b0adbe-6de9-4b88-94f5-\
+9ab689d35a71"],
+
+Cell[BoxData[
+ RowBox[{
+  TagBox["\<\"Apalancar en \"\>",
+   "EchoLabel"], " ", "7"}]], "Echo",
+ CellChangeTimes->{
+  3.8171466330169363`*^9},ExpressionUUID->"8f37c1d5-6d1f-461c-ba80-\
+be3ccddb0e4e"],
+
+Cell[BoxData[
+ RowBox[{
+  TagBox["\<\"Apalancar en \"\>",
+   "EchoLabel"], " ", "8"}]], "Echo",
+ CellChangeTimes->{
+  3.8171466330850277`*^9},ExpressionUUID->"d5ef796a-da67-4215-8d51-\
+c3aebda31b86"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"V", "=", 
+     RowBox[{"{", "VN", "}"}]}], ";", 
+    RowBox[{"$SeedRandom", "[", "2248", "]"}], ";", 
+    RowBox[{"For", "[", 
+     RowBox[{
+      RowBox[{"i", "=", "1"}], ",", 
+      RowBox[{"i", "<", "T"}], ",", 
+      RowBox[{"i", "++"}], ",", 
+      RowBox[{"PrependTo", "[", 
+       RowBox[{"V", ",", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"1", "+", "r"}]], 
+         RowBox[{"Expectation", "[", 
+          RowBox[{
+           RowBox[{"V", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"n", "\[Distributed]", 
+            RowBox[{"BinomialDistribution", "[", 
+             RowBox[{
+              RowBox[{"T", "-", "i"}], ",", 
+              FractionBox[
+               RowBox[{"1", "+", "r", "-", "d"}], 
+               RowBox[{"u", "-", "d"}]]}], "]"}]}]}], "]"}]}]}], "]"}]}], 
+     "]"}], ";", 
+    RowBox[{"ListLinePlot", "[", 
+     RowBox[{"V", ",", 
+      RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+      RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+      RowBox[{"FrameLabel", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Periodo (n)\>\"", ",", 
+         "\"\<Valoraci\[OAcute]n (\!\(\*SubscriptBox[\(V\), \(n\)]\))\>\""}], 
+        "}"}]}], ",", 
+      RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", 
+      RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"VN", ",", 
+      RowBox[{"4", " ", 
+       SuperscriptBox["u", "n"], 
+       SuperscriptBox["d", 
+        RowBox[{"T", "-", "n"}]]}], ",", 
+      "\"\<\!\(\*SubscriptBox[\(V\), \(N\)]\) (Funci\[OAcute]n de \
+Pagos)\>\""}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+     "u", ",", "2", ",", "\"\<u (Factor de Valorizaci\[OAcute]n)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"d", ",", 
+       FractionBox["1", "u"], ",", 
+       "\"\<d (Factor de Depreciaci\[OAcute]n)\>\""}], "}"}], ",", "0", ",", 
+     "u"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0.05", ",", "\"\<r (Tasa de Inter\[EAcute]s)\>\""}], 
+     "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "10", ",", "\"\<N\[UAcute]mero de Periodos\>\""}], 
+      "}"}], ",", "10", ",", "1000", ",", "1"}], "}"}], ",", 
+   RowBox[{"TrackedSymbols", "\[RuleDelayed]", 
+    RowBox[{"{", 
+     RowBox[{"VN", ",", "u", ",", "d", ",", "r", ",", "T"}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.817080084501294*^9, 3.8170801981438913`*^9}, {
+   3.8170802728663263`*^9, 3.817080291542028*^9}, {3.817080723799611*^9, 
+   3.817080724204193*^9}, 3.817146136041347*^9, {3.817163682243149*^9, 
+   3.8171636908589067`*^9}},
+ CellLabel->
+  "In[404]:=",ExpressionUUID->"6e2b12b5-48cc-446f-8f70-0bd63c48b363"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`d$$ = 0.92, $CellContext`r$$ = 
+    0.009, $CellContext`T$$ = 25, $CellContext`u$$ = 1.07, $CellContext`VN$$ =
+     0.612, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`VN$$], 4 $CellContext`u$$^25, 
+       "\!\(\*SubscriptBox[\(V\), \(N\)]\) (Funci\[OAcute]n de Pagos)"}}, {{
+       Hold[$CellContext`u$$], 2, "u (Factor de Valorizaci\[OAcute]n)"}}, {{
+       Hold[$CellContext`d$$], $CellContext`u$$^(-1), 
+       "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+      Dynamic[$CellContext`u$$]}, {{
+       Hold[$CellContext`r$$], 0.05, "r (Tasa de Inter\[EAcute]s)"}}, {{
+       Hold[$CellContext`T$$], 10, "N\[UAcute]mero de Periodos"}, 10, 1000, 
+      1}}, Typeset`size$$ = {643., {201., 206.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`d$$ = $CellContext`u$$^(-1), \
+$CellContext`r$$ = 0.05, $CellContext`T$$ = 10, $CellContext`u$$ = 
+        2, $CellContext`VN$$ = 4 $CellContext`u$$^25}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> ($CellContext`V = {$CellContext`VN$$}; \
+$CellContext`$SeedRandom[2248]; 
+       For[$CellContext`i = 1, $CellContext`i < $CellContext`T$$, 
+         Increment[$CellContext`i], 
+         PrependTo[$CellContext`V, (1/(1 + $CellContext`r$$)) Expectation[
+            Part[$CellContext`V, 1], 
+            Distributed[$CellContext`n, 
+             
+             BinomialDistribution[$CellContext`T$$ - $CellContext`i, (
+               
+               1 + $CellContext`r$$ - $CellContext`d$$)/($CellContext`u$$ - \
+$CellContext`d$$)]]]]]; 
+       ListLinePlot[$CellContext`V, Axes -> False, Frame -> True, 
+         FrameLabel -> {
+          "Periodo (n)", 
+           "Valoraci\[OAcute]n (\!\(\*SubscriptBox[\(V\), \(n\)]\))"}, 
+         ImageSize -> Full, PlotRange -> All]), 
+      "Specifications" :> {{{$CellContext`VN$$, 4 $CellContext`u$$^25, 
+          "\!\(\*SubscriptBox[\(V\), \(N\)]\) (Funci\[OAcute]n de Pagos)"}}, \
+{{$CellContext`u$$, 2, 
+          "u (Factor de Valorizaci\[OAcute]n)"}}, {{$CellContext`d$$, \
+$CellContext`u$$^(-1), "d (Factor de Depreciaci\[OAcute]n)"}, 0, 
+         Dynamic[$CellContext`u$$]}, {{$CellContext`r$$, 0.05, 
+          "r (Tasa de Inter\[EAcute]s)"}}, {{$CellContext`T$$, 10, 
+          "N\[UAcute]mero de Periodos"}, 10, 1000, 1}}, 
+      "Options" :> {
+       TrackedSymbols :> {$CellContext`VN$$, $CellContext`u$$, \
+$CellContext`d$$, $CellContext`r$$, $CellContext`T$$}}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{688., {322., 328.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.8170819201855583`*^9, 3.8170819226942377`*^9}, 
+   3.8171463845887213`*^9, 3.817163702088222*^9},
+ CellLabel->
+  "Out[404]=",ExpressionUUID->"8b913324-6984-4782-a3f1-441f148d1750"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "i", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\[CapitalDelta]rep", "=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      RowBox[{"1.07", 
+       RowBox[{"V", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "-", 
+      RowBox[{"0.92", 
+       RowBox[{"V", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}]}], 
+     RowBox[{
+      RowBox[{"1.07", 
+       RowBox[{"S", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "-", 
+      RowBox[{"0.92", 
+       RowBox[{"S", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}]}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", "25"}], "}"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.817082126207233*^9, 3.817082211305197*^9}, {
+  3.81708227378782*^9, 3.817082294289382*^9}, {3.817082326549488*^9, 
+  3.817082335517282*^9}, {3.817082475583035*^9, 3.817082483505669*^9}, {
+  3.817083185095357*^9, 3.8170831861135*^9}, {3.817146605874588*^9, 
+  3.817146621774104*^9}},
+ CellLabel->
+  "In[397]:=",ExpressionUUID->"29df8ab8-49e2-4430-b4a0-6dab28c004c2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.5835012085981939`", ",", "0.6355089250167278`", ",", 
+   "0.5951214419315529`", ",", "0.6481648747993661`", ",", 
+   "0.6069730883635186`", ",", "0.6610728636307008`", ",", 
+   "0.6190607564093102`", ",", "0.5797185774973178`", ",", 
+   "0.5428766492077679`", ",", "0.5083760771085828`", ",", 
+   "0.4760680647315889`", ",", "0.5185002183272307`", ",", 
+   "0.5647143682216136`", ",", "0.6150476053891925`", ",", 
+   "0.6698670658695337`", ",", "0.729572608697035`", ",", 
+   "0.7945997325156843`", ",", "0.7441018055894542`", ",", 
+   "0.810423923044166`", ",", "0.7589203466264057`", ",", 
+   "0.8265632470865861`", ",", "0.9002351886747378`", ",", 
+   "0.8430239804225119`", ",", "0.9181630743297358`", ",", 
+   "0.999999348346082`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.817082127521245*^9, 3.8170821897302837`*^9, 3.817082294865398*^9, 
+   3.817082336226111*^9, 3.817082484433527*^9, 3.8170829679629173`*^9, {
+   3.817083180725152*^9, 3.817083186903161*^9}, 3.817146624507378*^9},
+ CellLabel->
+  "Out[398]=",ExpressionUUID->"118dee1d-c24d-4a52-8b0f-aaddb4bfb0e7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       RowBox[{"p", " ", "1.07", " ", 
+        RowBox[{"S", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"1", "-", "p"}], ")"}], 
+        FractionBox["1", "1.07"], 
+        RowBox[{"S", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}]}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "0.002"}], ")"}], 
+       RowBox[{"i", "+", "1"}]]], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "364"}], "}"}]}], "]"}], "-", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"S", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"1", "+", "0.002"}], ")"}], "i"]], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "364"}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.817132288230788*^9, 3.817132364966769*^9}, {
+  3.817139433485692*^9, 3.81713953018184*^9}, {3.817164638024609*^9, 
+  3.817164760268005*^9}, {3.817164958743145*^9, 3.817165005353751*^9}, {
+  3.817165137159315*^9, 3.817165171946308*^9}, {3.817165229833494*^9, 
+  3.817165232024352*^9}, {3.817165372256277*^9, 3.817165426920862*^9}, {
+  3.817165604046308*^9, 3.817165615755312*^9}, {3.817165664969884*^9, 
+  3.817165675934486*^9}, {3.8171657089591913`*^9, 3.81716571548667*^9}},
+ CellLabel->
+  "In[436]:=",ExpressionUUID->"8a86fc22-e204-4845-9c80-71f4f62a1181"],
+
+Cell[BoxData["2.6993059802012734`*^-17"], "Output",
+ CellChangeTimes->{
+  3.817132319067317*^9, {3.817132358067586*^9, 3.817132383502672*^9}, 
+   3.8171394174676323`*^9, 3.8171394664911346`*^9, {3.817139519019388*^9, 
+   3.817139530812668*^9}, {3.8171647450248213`*^9, 3.8171647608306417`*^9}, {
+   3.8171649612391853`*^9, 3.817165011350699*^9}, {3.817165141759377*^9, 
+   3.8171651730768347`*^9}, 3.817165232648223*^9, {3.817165415692189*^9, 
+   3.817165427432309*^9}, 3.81716561866593*^9, 3.817165677849121*^9, 
+   3.817165716328506*^9},
+ CellLabel->
+  "Out[436]=",ExpressionUUID->"2e22a2ef-0920-4679-a3e4-9feb8c33f0d9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"-", "4"}], ",", 
+    RowBox[{"-", "17"}], ",", 
+    RowBox[{"-", "17"}], ",", 
+    RowBox[{"-", "17"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8171656327811003`*^9, 3.8171656394350452`*^9}, {
+  3.817165680185837*^9, 3.817165682417385*^9}, {3.8171657182606363`*^9, 
+  3.817165719026952*^9}},
+ CellLabel->
+  "In[437]:=",ExpressionUUID->"e8e7d0d2-2e4b-4add-9851-eb14d9428d39"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["55", "4"]}]], "Output",
+ CellChangeTimes->{3.817165720003612*^9},
+ CellLabel->
+  "Out[437]=",ExpressionUUID->"3140d017-4b4a-4fcc-9723-f520c0cbf07d"]
+}, Open  ]]
+},
+WindowSize->{808, 681},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 13, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"a18c0198-9c98-4b74-814b-570e0bc3da12"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3262, 91, 251, "Input",ExpressionUUID->"f3d8b1ca-4ab1-46b3-9b93-2fee003e3c3b"],
+Cell[3845, 115, 3833, 74, 731, "Output",ExpressionUUID->"a8530118-be2e-4667-b5bb-a3a3f23fb249"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7715, 194, 3608, 100, 363, "Input",ExpressionUUID->"6df5c581-4166-4228-94cb-d6435de0bb1a"],
+Cell[11326, 296, 3960, 77, 671, "Output",ExpressionUUID->"769614e0-9aaa-4eb7-a562-c091edf595fd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15323, 378, 3385, 85, 211, "Input",ExpressionUUID->"cf25ad2c-bfad-4fd8-88b2-3254409ad15d"],
+Cell[18711, 465, 2915, 58, 571, "Output",ExpressionUUID->"f4b3c593-b45a-4206-b27e-61aed789ff73"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21663, 528, 3482, 88, 232, "Input",ExpressionUUID->"2b336632-a7b8-4f48-8f0f-8b6b03e49471"],
+Cell[25148, 618, 3139, 63, 625, "Output",ExpressionUUID->"9b687326-eb0a-4126-96fe-29dd416f7608"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28324, 686, 6374, 176, 518, "Input",ExpressionUUID->"72e1b650-a539-40ef-940f-5fb4582abe07"],
+Cell[34701, 864, 6096, 115, 751, "Output",ExpressionUUID->"d3ab9f65-e7ed-48eb-a9ed-be419aae015e"],
+Cell[CellGroupData[{
+Cell[40822, 983, 199, 6, 25, "Echo",ExpressionUUID->"c8d6e4d1-b5a3-44d6-861d-578d7661bf04"],
+Cell[41024, 991, 197, 6, 25, "Echo",ExpressionUUID->"79b0adbe-6de9-4b88-94f5-9ab689d35a71"],
+Cell[41224, 999, 199, 6, 25, "Echo",ExpressionUUID->"8f37c1d5-6d1f-461c-ba80-be3ccddb0e4e"],
+Cell[41426, 1007, 199, 6, 25, "Echo",ExpressionUUID->"d5ef796a-da67-4215-8d51-c3aebda31b86"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41674, 1019, 2890, 80, 260, "Input",ExpressionUUID->"6e2b12b5-48cc-446f-8f70-0bd63c48b363"],
+Cell[44567, 1101, 3685, 72, 669, "Output",ExpressionUUID->"8b913324-6984-4782-a3f1-441f148d1750"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48289, 1178, 1056, 28, 72, "Input",ExpressionUUID->"29df8ab8-49e2-4430-b4a0-6dab28c004c2"],
+Cell[49348, 1208, 1119, 21, 77, "Output",ExpressionUUID->"118dee1d-c24d-4a52-8b0f-aaddb4bfb0e7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50504, 1234, 1534, 40, 59, "Input",ExpressionUUID->"8a86fc22-e204-4845-9c80-71f4f62a1181"],
+Cell[52041, 1276, 622, 10, 34, "Output",ExpressionUUID->"2e22a2ef-0920-4679-a3e4-9feb8c33f0d9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52700, 1291, 460, 12, 30, "Input",ExpressionUUID->"e8e7d0d2-2e4b-4add-9851-eb14d9428d39"],
+Cell[53163, 1305, 192, 5, 50, "Output",ExpressionUUID->"3140d017-4b4a-4fcc-9723-f520c0cbf07d"]
+}, Open  ]]
+}
+]
+*)
+
